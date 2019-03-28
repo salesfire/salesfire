@@ -40,7 +40,7 @@ class Formatter
      * @param \Salesfire\Types\Transaction $transaction
      * @return \Salesfire\Formatter
      */
-    public function addTransaction(Transaction $transaction): Formatter
+    public function addTransaction(Transaction $transaction)
     {
         $this->events[] = [
             'ecommerce' => [
@@ -55,7 +55,7 @@ class Formatter
      * @param \Salesfire\Types\Product $product
      * @return \Salesfire\Formatter
      */
-    public function addProductView(Product $product): Formatter
+    public function addProductView(Product $product)
     {
         $this->events[] = [
             'ecommerce' => [
@@ -70,7 +70,7 @@ class Formatter
      * @param \Salesfire\Types\Product $product
      * @return \Salesfire\Formatter
      */
-    public function addBasketAdd(Product $product): Formatter
+    public function addBasketAdd(Product $product)
     {
         $this->events[] = [
             'ecommerce' => [
@@ -85,7 +85,7 @@ class Formatter
      * @param \Salesfire\Types\Product $product
      * @return \Salesfire\Formatter
      */
-    public function addBasketRemove(Product $product): Formatter
+    public function addBasketRemove(Product $product)
     {
         $this->events[] = [
             'ecommerce' => [
@@ -96,7 +96,7 @@ class Formatter
         return $this;
     }
 
-    public function __toArray(): array
+    public function __toArray()
     {
         return $this->events;
     }
@@ -104,7 +104,7 @@ class Formatter
     /**
      * @return string
      */
-     public function toJson(): string
+     public function toJson()
      {
         return json_encode($this->events);
      }
@@ -112,7 +112,7 @@ class Formatter
     /**
      * @return string
      */
-    public function toScriptTag(): string
+    public function toScriptTag()
     {
         $script = '';
         if (count($this->events) > 0) {

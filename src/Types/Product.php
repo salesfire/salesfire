@@ -63,7 +63,7 @@ class Product
      * @param array The data to be set from array
      * @return void
      */
-    public function __construct(array $data = []): void
+    public function __construct(array $data = [])
     {
         foreach($data as $key => $val) {
             if (isset($this->{$key})) {
@@ -77,7 +77,7 @@ class Product
     /**
      * @return string
      */
-    public function getSku(): string
+    public function getSku()
     {
         return $this->sku;
     }
@@ -86,7 +86,7 @@ class Product
      * @param string The sku to set
      * @return \Salesfire\Types\Product
      */
-    public function setSku(string $sku): Product
+    public function setSku(string $sku)
     {
         $this->sku = $sku;
 
@@ -96,7 +96,7 @@ class Product
     /**
      * @return string
      */
-    public function getParentSku(string $parent_sku): string
+    public function getParentSku(string $parent_sku)
     {
         return $this->parent_sku;
     }
@@ -105,7 +105,7 @@ class Product
      * @param string The parent sku to set
      * @return \Salesfire\Types\Product
      */
-    public function setParentSku(string $parent_sku): Product
+    public function setParentSku(string $parent_sku)
     {
         $this->parent_sku = $parent_sku;
 
@@ -115,7 +115,7 @@ class Product
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -124,7 +124,7 @@ class Product
      * @param string The name to set
      * @return \Salesfire\Types\Product
      */
-    public function setName(string $name): Product
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -134,7 +134,7 @@ class Product
     /**
      * @return string
      */
-    public function getVariant(): string
+    public function getVariant()
     {
         return $this->variant;
     }
@@ -143,7 +143,7 @@ class Product
      * @param string The variant to set
      * @return \Salesfire\Types\Product
      */
-    public function setVariant(string $variant): Product
+    public function setVariant(string $variant)
     {
         $this->variant = $variant;
 
@@ -153,7 +153,7 @@ class Product
     /**
      * @return string
      */
-    public function getBrand(): string
+    public function getBrand()
     {
         return $this->brand;
     }
@@ -162,7 +162,7 @@ class Product
      * @param string The brand to set
      * @return \Salesfire\Types\Product
      */
-    public function setBrand(string $brand): Product
+    public function setBrand(string $brand)
     {
         $this->brand = $brand;
 
@@ -172,7 +172,7 @@ class Product
     /**
      * @return string
      */
-    public function getCategory(): string
+    public function getCategory()
     {
         return $this->category;
     }
@@ -181,7 +181,7 @@ class Product
      * @param string The category to set
      * @return \Salesfire\Types\Product
      */
-    public function setCategory(string $category): Product
+    public function setCategory(string $category)
     {
         $this->category = $category;
 
@@ -191,7 +191,7 @@ class Product
     /**
      * @return float
      */
-    public function getPrice(): float
+    public function getPrice()
     {
         return $this->price;
     }
@@ -200,7 +200,7 @@ class Product
      * @param string The price to set
      * @return \Salesfire\Types\Product
      */
-    public function setPrice(float $price): Product
+    public function setPrice(float $price)
     {
         $this->price = $price;
 
@@ -210,7 +210,7 @@ class Product
     /**
      * @return float
      */
-    public function getTax(): float
+    public function getTax()
     {
         return $this->tax;
     }
@@ -219,7 +219,7 @@ class Product
      * @param string The tax to set
      * @return \Salesfire\Types\Product
      */
-    public function setTax(float $tax): Product
+    public function setTax(float $tax)
     {
         $this->tax = $tax;
 
@@ -229,7 +229,7 @@ class Product
     /**
      * @return integer
      */
-    public function getQuantity(): integer
+    public function getQuantity()
     {
         return $this->quantity;
     }
@@ -238,7 +238,7 @@ class Product
      * @param string The quantity to set
      * @return \Salesfire\Types\Product
      */
-    public function setQuantity(int $quantity = 1): Product
+    public function setQuantity(int $quantity = 1)
     {
         $this->quantity = $quantity;
 
@@ -248,7 +248,7 @@ class Product
     /**
      * @return string
      */
-    public function getCoupon(): string
+    public function getCoupon()
     {
         return $this->coupon;
     }
@@ -257,7 +257,7 @@ class Product
      * @param string The coupon to set
      * @return \Salesfire\Types\Product
      */
-    public function setCoupon(string $coupon): Product
+    public function setCoupon(string $coupon)
     {
         $this->coupon = $coupon;
 

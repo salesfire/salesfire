@@ -53,7 +53,7 @@ class Transaction
      * @param array The data to be set from array
      * @return void
      */
-    public function __construct(array $data = []): void
+    public function __construct(array $data = [])
     {
         foreach($data as $key => $val) {
             $this->{$key} = $val;
@@ -65,7 +65,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -74,7 +74,7 @@ class Transaction
      * @param string The id to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setId(string $id): Transaction
+    public function setId(string $id)
     {
         $this->id = $id;
 
@@ -84,7 +84,7 @@ class Transaction
     /**
      * @return float
      */
-    public function getShipping(): float
+    public function getShipping()
     {
         return $this->shipping;
     }
@@ -93,7 +93,7 @@ class Transaction
      * @param float The shipping to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setShipping(float $shipping): Transaction
+    public function setShipping(float $shipping)
     {
         $this->shipping = $shipping;
 
@@ -103,7 +103,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getAffiliate(): string
+    public function getAffiliate()
     {
         return $this->affiliate;
     }
@@ -112,7 +112,7 @@ class Transaction
      * @param string The affiliate to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setAffiliate(string $affiliate): Transaction
+    public function setAffiliate(string $affiliate)
     {
         $this->affiliate = $affiliate;
 
@@ -122,7 +122,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getCity(): string
+    public function getCity()
     {
         return $this->city;
     }
@@ -131,7 +131,7 @@ class Transaction
      * @param string The city to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setCity(string $city): Transaction
+    public function setCity(string $city)
     {
         $this->city = $city;
 
@@ -150,7 +150,7 @@ class Transaction
      * @param string The state to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setState(string $state): Transaction
+    public function setState(string $state)
     {
         $this->state = $state;
 
@@ -160,7 +160,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getCountry(): string
+    public function getCountry()
     {
         return $this->country;
     }
@@ -169,7 +169,7 @@ class Transaction
      * @param string The country to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setCountry(string $country): Transaction
+    public function setCountry(string $country)
     {
         $this->country = $country;
 
@@ -188,7 +188,7 @@ class Transaction
      * @param string The coupon to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setCoupon(string $coupon): Transaction
+    public function setCoupon(string $coupon)
     {
         $this->coupon = $coupon;
 
@@ -198,7 +198,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getCurrency(string $currency): string
+    public function getCurrency(string $currency)
     {
         return $this->currency;
     }
@@ -207,7 +207,7 @@ class Transaction
      * @param string The currency code to set
      * @return \Salesfire\Types\Transaction
      */
-    public function setCurrency(string $currency): Transaction
+    public function setCurrency(string $currency)
     {
         return $this->currency;
     }
@@ -216,7 +216,7 @@ class Transaction
      * @param \Salesfire\Product The product to add
      * @return \Salesfire\Types\Transaction
      */
-    public function addProduct(Product $product): Transaction
+    public function addProduct(Product $product)
     {
         $this->products[] = $product;
 
