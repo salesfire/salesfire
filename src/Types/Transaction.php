@@ -42,7 +42,7 @@ class Transaction
     /**
      * @var string The currency (ISO 4217)
      */
-    protected $currency = "GBP";
+    protected $currency;
 
     /**
      * @var \Salesfire\Types\Product[] A list of products
@@ -141,7 +141,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->state;
     }
@@ -179,7 +179,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getCoupon(): string
+    public function getCoupon()
     {
         return $this->coupon;
     }
@@ -198,7 +198,7 @@ class Transaction
     /**
      * @return string
      */
-    public function getCurrency(string $currency)
+    public function getCurrency()
     {
         return $this->currency;
     }
@@ -229,7 +229,7 @@ class Transaction
     public function getProducts()
     {
         return array_map(function ($product) {
-            return (array) $product;
+            return $product->toArray();
         }, $this->products);
     }
 
@@ -256,7 +256,7 @@ class Transaction
     /**
      * @return array
      */
-    public function __toArray()
+    public function toArray()
     {
         return array_filter([
             'id'        => $this->id,
@@ -270,7 +270,9 @@ class Transaction
             'state'     => $this->state,
             'country'   => $this->country,
             'products'  => $this->getProducts(),
-        ]);
+        ], function ($value) {
+            return ! empty($value);
+        });
     }
 
 }

@@ -44,7 +44,7 @@ class Formatter
     {
         $this->events[] = [
             'ecommerce' => [
-                'purchase' => (array) $transaction,
+                'purchase' => $transaction->toArray(),
             ]
         ];
 
@@ -59,7 +59,7 @@ class Formatter
     {
         $this->events[] = [
             'ecommerce' => [
-                'view' => (array) $product,
+                'view' => $product->toArray(),
             ]
         ];
 
@@ -74,7 +74,7 @@ class Formatter
     {
         $this->events[] = [
             'ecommerce' => [
-                'add' => (array) $product,
+                'add' => $product->toArray(),
             ]
         ];
 
@@ -89,7 +89,7 @@ class Formatter
     {
         $this->events[] = [
             'ecommerce' => [
-                'remove' => (array) $product,
+                'remove' => $product->toArray(),
             ]
         ];
 
@@ -106,7 +106,7 @@ class Formatter
      */
      public function toJson()
      {
-        return json_encode($this->events);
+        return json_encode($this->events, JSON_PRETTY_PRINT);
      }
 
     /**

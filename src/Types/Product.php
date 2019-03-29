@@ -12,7 +12,7 @@ class Product
     /**
      * @var string The parent product sku
      */
-    protected $parent_sku
+    protected $parent_sku;
 
     /**
      * @var string The product name
@@ -47,7 +47,7 @@ class Product
     /**
      * @var int The quantity of products
      */
-    protected $quantity = 1;
+    protected $quantity;
 
     /**
      * @var string The currency code (ISO 4217)
@@ -66,9 +66,7 @@ class Product
     public function __construct(array $data = [])
     {
         foreach($data as $key => $val) {
-            if (isset($this->{$key})) {
-                $this->{$key} = $val;
-            }
+            $this->{$key} = $val;
         }
 
         return $this;
@@ -238,7 +236,7 @@ class Product
      * @param string The quantity to set
      * @return \Salesfire\Types\Product
      */
-    public function setQuantity(int $quantity = 1)
+    public function setQuantity(int $quantity)
     {
         $this->quantity = $quantity;
 
@@ -267,7 +265,7 @@ class Product
     /**
      * @return string
      */
-    public function getCurrency(): string
+    public function getCurrency()
     {
         return $this->currency;
     }
@@ -276,7 +274,7 @@ class Product
      * @param string The currency to set
      * @return \Salesfire\Types\Product
      */
-    public function setCurrency(string $currency = 'GBP'): Product
+    public function setCurrency(string $currency)
     {
         $this->currency = $currency;
 
@@ -286,7 +284,7 @@ class Product
     /**
      * @return array
      */
-    public function __toArray()
+    public function toArray()
     {
         return array_filter([
             'sku'        => $this->sku,
@@ -299,6 +297,8 @@ class Product
             'quantity'   => $this->quantity,
             'coupon'     => $this->coupon,
             'currency'   => $this->currency,
-        ]);
+        ], function ($value) {
+            return ! empty($value);
+        });
     }
 }
