@@ -239,7 +239,7 @@ class Transaction
     public function getRevenue()
     {
         return array_reduce($this->products, function ($revenue, $product) {
-            return $revenue + $product->getPrice();
+            return $revenue + ($product->getPrice() * max(1, $product->getQuantity()));
         }, 0);
     }
 
@@ -249,7 +249,7 @@ class Transaction
     public function getTax()
     {
         return array_reduce($this->products, function ($tax, $product) {
-            return $tax + $product->getTax();
+            return $tax + ($product->getTax() * max(1, $product->getQuantity()));
         }, 0);
     }
 
