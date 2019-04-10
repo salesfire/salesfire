@@ -4,60 +4,61 @@ namespace Salesfire\Types;
 
 class Product
 {
+
     /**
      * @var string The child product sku
      */
-    protected $sku;
+    public $sku;
 
     /**
      * @var string The parent product sku
      */
-    protected $parent_sku;
+    public $parent_sku;
 
     /**
      * @var string The product name
      */
-    protected $name;
+    public $name;
 
     /**
      * @var string The product variant eg. size, colour
      */
-    protected $variant;
+    public $variant;
 
     /**
      * @var string The product brand
      */
-    protected $brand;
+    public $brand;
 
     /**
      * @var string The products main category
      */
-    protected $category;
+    public $category;
 
     /**
      * @var float The 2 decimal place product ex vat price
      */
-    protected $price;
+    public $price;
 
     /**
      * @var float The 2 decimal place product tax
      */
-    protected $tax;
+    public $tax;
 
     /**
      * @var int The quantity of products
      */
-    protected $quantity;
+    public $quantity;
 
     /**
      * @var string The currency code (ISO 4217)
      */
-    protected $currency;
+    public $currency;
 
     /**
      * @var string The coupon code
      */
-    protected $coupon;
+    public $coupon;
 
     /**
      * @param array The data to be set from array
@@ -65,7 +66,7 @@ class Product
      */
     public function __construct(array $data = [])
     {
-        foreach($data as $key => $val) {
+        foreach ($data as $key => $val) {
             $this->{$key} = $val;
         }
 
@@ -301,4 +302,5 @@ class Product
             return ! empty($value);
         });
     }
+
 }

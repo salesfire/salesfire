@@ -7,47 +7,47 @@ class Transaction
     /**
      * @var string The order identifier
      */
-    protected $id;
+    public $id;
 
     /**
      * @var float The shipping price
      */
-    protected $shipping;
+    public $shipping;
 
     /**
      * @var string The affiliate code
      */
-    protected $affiliate;
+    public $affiliate;
 
     /**
      * @var string The city code
      */
-    protected $city;
+    public $city;
 
     /**
      * @var string The state code
      */
-    protected $state;
+    public $state;
 
     /**
      * @var string The country code (ISO 3166-1 Alpha-2)
      */
-    protected $country;
+    public $country;
 
     /**
      * @var string The coupon code
      */
-    protected $coupon;
+    public $coupon;
 
     /**
      * @var string The currency (ISO 4217)
      */
-    protected $currency;
+    public $currency;
 
     /**
      * @var \Salesfire\Types\Product[] A list of products
      */
-    protected $products = [];
+    public $products = [];
 
     /**
      * @param array The data to be set from array
@@ -55,7 +55,7 @@ class Transaction
      */
     public function __construct(array $data = [])
     {
-        foreach($data as $key => $val) {
+        foreach ($data as $key => $val) {
             $this->{$key} = $val;
         }
 

@@ -10,12 +10,12 @@ class Formatter
     /**
      * @var array The site identifier
      */
-    protected $uuid;
+    public $uuid;
 
     /**
      * @var array The events to format
      */
-    protected $events = [];
+    public $events = [];
 
     /**
      * @param string The site identifier
@@ -104,10 +104,10 @@ class Formatter
     /**
      * @return string
      */
-     public function toJson()
-     {
+    public function toJson()
+    {
         return json_encode($this->events, JSON_PRETTY_PRINT);
-     }
+    }
 
     /**
      * @return string
@@ -115,8 +115,8 @@ class Formatter
     public function toScriptTag()
     {
         $script = '';
-        if (count($this->events) > 0) {
 
+        if (! empty($this->events)) {
             $script .= "<script>\n";
             $script .= "sfDataLayer = window.sfDataLayer || [];\n";
             $script .= "sfDataLayer.push(" . $this->toJson() . ");\n";
@@ -127,4 +127,5 @@ class Formatter
 
         return $script;
     }
+
 }
