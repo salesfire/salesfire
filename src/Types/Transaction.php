@@ -209,7 +209,9 @@ class Transaction
      */
     public function setCurrency(string $currency)
     {
-        return $this->currency;
+        $this->currency = $currency;
+
+        return $this;
     }
 
     /**

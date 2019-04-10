@@ -94,7 +94,7 @@ class Product
     /**
      * @return string
      */
-    public function getParentSku(string $parent_sku)
+    public function getParentSku()
     {
         return $this->parent_sku;
     }
