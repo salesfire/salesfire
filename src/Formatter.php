@@ -3,7 +3,7 @@
 namespace Salesfire;
 
 use Salesfire\Types\Transaction;
-use Salefire\Types\Product;
+use Salesfire\Types\Product;
 
 class Formatter
 {
