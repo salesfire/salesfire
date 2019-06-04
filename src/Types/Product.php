@@ -64,7 +64,7 @@ class Product
      * @param array The data to be set from array
      * @return void
      */
-    public function __construct(array $data = [])
+    public function __construct(array $data = array())
     {
         foreach ($data as $key => $val) {
             $this->{$key} = $val;
@@ -287,7 +287,7 @@ class Product
      */
     public function toArray()
     {
-        return array_filter([
+        return array_filter(array(
             'sku'        => $this->sku,
             'parent_sku' => $this->parent_sku,
             'name'       => $this->name,
@@ -298,7 +298,7 @@ class Product
             'quantity'   => $this->quantity,
             'coupon'     => $this->coupon,
             'currency'   => $this->currency,
-        ], function ($value) {
+        ), function ($value) {
             return ! empty($value);
         });
     }

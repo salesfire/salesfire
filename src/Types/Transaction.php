@@ -47,13 +47,13 @@ class Transaction
     /**
      * @var \Salesfire\Types\Product[] A list of products
      */
-    public $products = [];
+    public $products = array();
 
     /**
      * @param array The data to be set from array
      * @return void
      */
-    public function __construct(array $data = [])
+    public function __construct(array $data = array())
     {
         foreach ($data as $key => $val) {
             $this->{$key} = $val;
@@ -260,7 +260,7 @@ class Transaction
      */
     public function toArray()
     {
-        return array_filter([
+        return array_filter(array(
             'id'        => $this->id,
             'revenue'   => $this->getRevenue(),
             'tax'       => $this->getTax(),
@@ -272,7 +272,7 @@ class Transaction
             'state'     => $this->state,
             'country'   => $this->country,
             'products'  => $this->getProducts(),
-        ], function ($value) {
+        ), function ($value) {
             return ! empty($value);
         });
     }

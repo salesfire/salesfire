@@ -15,7 +15,7 @@ class Formatter
     /**
      * @var array The events to format
      */
-    public $events = [];
+    public $events = array();
 
     /**
      * @param string The site identifier
@@ -42,11 +42,11 @@ class Formatter
      */
     public function addTransaction(Transaction $transaction)
     {
-        $this->events[] = [
-            'ecommerce' => [
+        $this->events[] = array(
+            'ecommerce' => array(
                 'purchase' => $transaction->toArray(),
-            ]
-        ];
+            )
+        );
 
         return $this;
     }
@@ -57,11 +57,11 @@ class Formatter
      */
     public function addProductView(Product $product)
     {
-        $this->events[] = [
-            'ecommerce' => [
+        $this->events[] = array(
+            'ecommerce' => array(
                 'view' => $product->toArray(),
-            ]
-        ];
+            )
+        );
 
         return $this;
     }
@@ -72,11 +72,11 @@ class Formatter
      */
     public function addBasketAdd(Product $product)
     {
-        $this->events[] = [
-            'ecommerce' => [
+        $this->events[] = array(
+            'ecommerce' => array(
                 'add' => $product->toArray(),
-            ]
-        ];
+            )
+        );
 
         return $this;
     }
@@ -87,11 +87,11 @@ class Formatter
      */
     public function addBasketRemove(Product $product)
     {
-        $this->events[] = [
-            'ecommerce' => [
+        $this->events[] = array(
+            'ecommerce' => array(
                 'remove' => $product->toArray(),
-            ]
-        ];
+            )
+        );
 
         return $this;
     }
