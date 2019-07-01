@@ -42,11 +42,11 @@ class Formatter
      */
     public function addTransaction(Transaction $transaction)
     {
-        $this->events[] = array(
-            'ecommerce' => array(
-                'purchase' => $transaction->toArray(),
-            )
-        );
+        if (! isset($this->events['ecommerce'])) {
+            $this->events['ecommerce'] = array();
+        }
+
+        $this->events['ecommerce']['purchase'] = $transaction->toArray();
 
         return $this;
     }
@@ -57,11 +57,11 @@ class Formatter
      */
     public function addProductView(Product $product)
     {
-        $this->events[] = array(
-            'ecommerce' => array(
-                'view' => $product->toArray(),
-            )
-        );
+        if (! isset($this->events['ecommerce'])) {
+            $this->events['ecommerce'] = array();
+        }
+
+        $this->events['ecommerce']['view'] = $product->toArray();
 
         return $this;
     }
@@ -72,11 +72,11 @@ class Formatter
      */
     public function addBasketAdd(Product $product)
     {
-        $this->events[] = array(
-            'ecommerce' => array(
-                'add' => $product->toArray(),
-            )
-        );
+        if (! isset($this->events['ecommerce'])) {
+            $this->events['ecommerce'] = array();
+        }
+
+        $this->events['ecommerce']['add'] = $product->toArray();
 
         return $this;
     }
@@ -87,11 +87,11 @@ class Formatter
      */
     public function addBasketRemove(Product $product)
     {
-        $this->events[] = array(
-            'ecommerce' => array(
-                'remove' => $product->toArray(),
-            )
-        );
+        if (! isset($this->events['ecommerce'])) {
+            $this->events['ecommerce'] = array();
+        }
+
+        $this->events['ecommerce']['remove'] = $product->toArray();
 
         return $this;
     }
