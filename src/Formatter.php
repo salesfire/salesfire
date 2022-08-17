@@ -37,6 +37,21 @@ class Formatter
     }
 
     /**
+     * @param string $platform
+     * @return \Salesfire\Formatter
+     */
+    public function addPlatform($platform)
+    {
+        if (! isset($this->events['salesfire'])) {
+            $this->events['salesfire'] = array();
+        }
+
+        $this->events['salesfire']['platform'] = $platform;
+
+        return $this;
+    }
+
+    /**
      * @param \Salesfire\Types\Transaction $transaction
      * @return \Salesfire\Formatter
      */

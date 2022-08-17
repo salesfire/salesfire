@@ -2,7 +2,7 @@
     "name": "salesfire/salesfire",
     "description": "Salesfire SDK",
     "type": "library",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "homepage": "https://www.salesfire.co.uk",
     "license": [
         "OSL-3.0"
