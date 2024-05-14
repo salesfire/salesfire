@@ -125,6 +125,7 @@ class Formatter
     }
 
     /**
+     * @param string $nonce
      * @return string
      */
     public function toScriptTag($nonce = null)
