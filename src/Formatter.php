@@ -125,14 +125,21 @@ class Formatter
     }
 
     /**
+     * @param string $nonce
      * @return string
      */
-    public function toScriptTag()
+    public function toScriptTag($nonce = null)
     {
         $script = '';
 
         if (! empty($this->events)) {
-            $script .= "<script>\n";
+            $script .= "<script";
+
+            if ($nonce) {
+                $script .= " nonce=\"{$nonce}\"";
+            }
+
+            $script .= ">\n";
             $script .= "sfDataLayer = window.sfDataLayer || [];\n";
             $script .= "sfDataLayer.push(" . $this->toJson() . ");\n";
             $script .= "</script>\n";
