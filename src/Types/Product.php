@@ -294,7 +294,7 @@ class Product
             'variant'    => $this->variant,
             'brand'      => $this->brand,
             'category'   => $this->category,
-            'price'      => $this->price,
+            'price'      => $this->price + $this->tax,
             'quantity'   => $this->quantity,
             'coupon'     => $this->coupon,
             'currency'   => $this->currency,
